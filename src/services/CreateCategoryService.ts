@@ -6,15 +6,6 @@ interface IRequest {
 }
 
 class CreateCategoryService {
-  /**
-   *
-   * [] - Definir o tipo de retorno
-   * [x] - Alterar o retorno de erro
-   * [x] - Acessar o repositorio
-   * [] - Retornar algo
-   *
-   */
-
   constructor(private categoriesRepository: CategoriesRepository) {}
 
   execute({ name, description }: IRequest): void {
