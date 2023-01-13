@@ -9,4 +9,6 @@ export const AppDataSource = new DataSource({
   database: "simp_automotive",
   synchronize: true,
   logging: true,
+  // migrations: ["./src/database/migrations/*.ts"],
+  // entities: ["./src/modules/**/entities/*.ts"]
 });
