@@ -1,14 +1,21 @@
 import { DataSource } from "typeorm";
 
-export const AppDataSource = new DataSource({
+const AppDataSource = new DataSource({
   type: "postgres",
-  host: "database",
+  host: "localhost",
   port: 5432,
   username: "docker",
   password: "1234",
   database: "simp_automotive",
   synchronize: true,
   logging: true,
-  // migrations: ["./src/database/migrations/*.ts"],
-  // entities: ["./src/modules/**/entities/*.ts"]
+  migrations: ["./src/database/migrations/*.ts"],
+  entities: [],
+  subscribers: [],
 });
+
+export function createConnection(host = "database"): Promise<DataSource> {
+  return AppDataSource.setOptions({ host }).initialize();
+}
+
+export default AppDataSource;
