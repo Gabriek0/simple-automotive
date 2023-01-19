@@ -1,22 +1,22 @@
 import { DataSource } from "typeorm";
 import { Category } from "../modules/cars/entities/Category";
 
-const AppDataSource = new DataSource({
+export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
+  host: "database",
   port: 5432,
   username: "docker",
   password: "1234",
   database: "simp_automotive",
-  synchronize: true,
+  // synchronize: true,
   logging: true,
   migrations: ["./src/database/migrations/*.ts"],
   entities: [Category],
   subscribers: [],
 });
 
-export function createConnection(host = "database"): Promise<DataSource> {
-  return AppDataSource.setOptions({ host }).initialize();
-}
-
-export default AppDataSource;
+AppDataSource.initialize()
+  .then(async () => {
+    console.log("Initializng the database...");
+  })
+  .catch((err) => console.log(err));

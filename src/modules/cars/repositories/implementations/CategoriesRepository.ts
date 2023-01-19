@@ -6,7 +6,8 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
-import AppDataSource from "../../../../database/data-source";
+
+import { AppDataSource } from "../../../../database/data-source";
 
 // DTO => Data Transfer Object
 
