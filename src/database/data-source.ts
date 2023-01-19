@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { Category } from "../modules/cars/entities/Category";
 
 const AppDataSource = new DataSource({
   type: "postgres",
@@ -10,7 +11,7 @@ const AppDataSource = new DataSource({
   synchronize: true,
   logging: true,
   migrations: ["./src/database/migrations/*.ts"],
-  entities: [],
+  entities: [Category],
   subscribers: [],
 });
 
