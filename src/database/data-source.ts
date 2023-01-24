@@ -1,9 +1,11 @@
 import { DataSource } from "typeorm";
+
 import { Category } from "../modules/cars/entities/Category";
+import { Specification } from "../modules/cars/entities/Specification";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
+  host: "database",
   port: 5432,
   username: "docker",
   password: "1234",
@@ -11,12 +13,12 @@ export const AppDataSource = new DataSource({
   // synchronize: true,
   logging: true,
   migrations: ["./src/database/migrations/*.ts"],
-  entities: [Category],
+  entities: [Category, Specification],
   subscribers: [],
 });
 
 AppDataSource.initialize()
   .then(async () => {
-    console.log("Initializng the database...");
+    console.log("Initializing the database...");
   })
   .catch((err) => console.log(err));
