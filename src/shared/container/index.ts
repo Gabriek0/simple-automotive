@@ -1,11 +1,20 @@
 import { container } from "tsyringe";
+
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
 import { CategoriesRepository } from "../../modules/cars/repositories/implementations/CategoriesRepository";
 
-// 1. Pass ICategoryRepository to within Sigleton
+import { ISpecificationsRepository } from "../../modules/cars/repositories/ISpecificationsRepository";
+import { SpecificationsRepository } from "../../modules/cars/repositories/implementations/SpecificationsRepository";
+
+// 1. Pass interface to within Sigleton
 // 2. When we call the record below, the injection will happen
 
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
   CategoriesRepository
+);
+
+container.registerSingleton<ISpecificationsRepository>(
+  "SpecificationsRepository",
+  SpecificationsRepository
 );
