@@ -1,5 +1,5 @@
 import multer from "multer";
-import { Request, Response, Router } from "express";
+import { Router } from "express";
 
 // Modules
 
