@@ -12,7 +12,6 @@ class CreateUserUseCase {
   async execute({
     name,
     email,
-    username,
     password,
     driver_license,
   }: ICreateUserDTO): Promise<void> {
@@ -20,7 +19,6 @@ class CreateUserUseCase {
       name,
       email,
       password,
-      username,
       driver_license,
     });
   }
