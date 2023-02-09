@@ -36,6 +36,16 @@ class UsersRepository implements IUsersRepository {
 
     return emailAlreadyExists;
   }
+
+  async findById(id: string): Promise<User> {
+    const userExists = await this.repository.findOne({
+      where: {
+        id,
+      },
+    });
+
+    return userExists;
+  }
 }
 
 export { UsersRepository };
