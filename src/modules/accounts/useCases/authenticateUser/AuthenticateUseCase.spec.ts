@@ -44,14 +44,14 @@ describe("Authenticate User", () => {
     }).rejects.toBeInstanceOf(AppError);
   });
 
-  it("should be able to return a incorrect password message", () => {
-    expect(async () => {
-      await createUserUseCase.execute(user);
+  it("should be able to return a incorrect password message", async () => {
+    await createUserUseCase.execute(user);
 
-      await authenticateUserUseCase.execute({
+    await expect(
+      authenticateUserUseCase.execute({
         email: user.email,
         password: "incorrectPassword",
-      });
-    }).rejects.toBeInstanceOf(AppError);
+      })
+    ).rejects.toBeInstanceOf(AppError);
   });
 });
