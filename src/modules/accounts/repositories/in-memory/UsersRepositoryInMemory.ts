@@ -3,7 +3,7 @@ import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
 import { IUsersRepository } from "../IUsersRepository";
 
 class UsersRepositoryInMemory implements IUsersRepository {
-  users: User[] = [];
+  public users: User[] = [];
 
   async create({ name, email, password, driver_license }: ICreateUserDTO) {
     const user = new User();
