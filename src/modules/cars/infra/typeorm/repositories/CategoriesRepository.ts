@@ -1,13 +1,13 @@
-import { Category } from "../../entities/Category";
+import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 
 import { Repository } from "typeorm";
 
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from "../ICategoriesRepository";
+} from "@modules/cars/repositories/ICategoriesRepository";
 
-import { AppDataSource } from "../../../../database/data-source";
+import { AppDataSource } from "@shared/database/data-source";
 
 // DTO => Data Transfer Object
 
