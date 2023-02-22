@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinColumn,
   ManyToOne,
   PrimaryColumn,
@@ -8,6 +9,7 @@ import {
 import { v4 as uuid } from "uuid";
 import { Category } from "./Category";
 
+@Entity("cars")
 class Car {
   @PrimaryColumn()
   id: string;
@@ -22,7 +24,7 @@ class Car {
   daily_rate: number;
 
   @Column()
-  available = true;
+  available: boolean;
 
   @Column()
   license_plate: string;

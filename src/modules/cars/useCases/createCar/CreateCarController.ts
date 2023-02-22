@@ -7,12 +7,12 @@ class CreateCarController {
   async handle(request: Request, response: Response): Promise<Response> {
     const {
       name,
-      brand,
-      daily_rate,
       description,
-      fine_amount,
-      category_id,
+      daily_rate,
       license_plate,
+      fine_amount,
+      brand,
+      category_id,
     } = request.body;
 
     const createCarUseCase = container.resolve(CreateCarUseCase);
