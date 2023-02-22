@@ -6,7 +6,7 @@ import { Specification } from "@modules/cars/infra/typeorm/entities/Specificatio
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: "localhost",
+  host: "database",
   port: 5432,
   username: "docker",
   password: "1234",
