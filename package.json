@@ -20,7 +20,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
-    "migration-create": "typeorm-ts-node-esm migration:create ./src/database/migrations/AlterUserAddAvatar",
+    "migration-create": "typeorm-ts-node-esm migration:create ./src/database/migrations/CreateCars",
     "migration-run": "typeorm-ts-node-esm migration:run -d ./src/database/data-source.ts",
     "test": "jest"
   },
