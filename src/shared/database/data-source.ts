@@ -5,22 +5,20 @@ import { User } from "@modules/accounts/infra/typeorm/entities/User";
 import { Category } from "@modules/cars/infra/typeorm/entities/Category";
 import { Specification } from "@modules/cars/infra/typeorm/entities/Specification";
 
-export const AppDataSource = new DataSource({
-  type: "postgres",
-  host: "database",
-  port: 5432,
-  username: "docker",
-  password: "1234",
-  database: "simp_automotive",
-  // synchronize: true,
-  logging: true,
-  migrations: ["./src/shared/database/migrations/*.ts"],
-  entities: [Category, Specification, User, Car],
-  subscribers: [],
-});
+export const AppDataSource = (host = "database"): DataSource => {
+  const dataSource = new DataSource({
+    type: "postgres",
+    host, // database if docker, localhost if migrations.
+    port: 5432,
+    username: "docker",
+    password: "1234",
+    database: "simp_automotive",
+    synchronize: false,
+    logging: true,
+    migrations: ["./src/shared/database/migrations/*.ts"],
+    entities: [Category, Specification, User, Car],
+    subscribers: [],
+  });
 
-AppDataSource.initialize()
-  .then(async () => {
-    console.log("Initializing the database...");
-  })
-  .catch((err) => console.log(err));
+  return dataSource;
+};

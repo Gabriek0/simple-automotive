@@ -8,7 +8,7 @@ class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
 
   constructor() {
-    this.repository = AppDataSource.getRepository(User);
+    this.repository = AppDataSource().getRepository(User);
   }
 
   async create({

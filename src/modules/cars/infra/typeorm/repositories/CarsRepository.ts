@@ -10,7 +10,7 @@ class CarsRepository implements ICarsRepository {
   private repository: Repository<Car>;
 
   constructor() {
-    this.repository = AppDataSource.getRepository(Car);
+    this.repository = AppDataSource().getRepository(Car);
   }
 
   async create(data: ICreateCarDTO): Promise<Car> {

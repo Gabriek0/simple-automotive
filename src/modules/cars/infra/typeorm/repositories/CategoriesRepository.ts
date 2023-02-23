@@ -15,7 +15,7 @@ class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
   constructor() {
-    this.repository = AppDataSource.getRepository(Category);
+    this.repository = AppDataSource().getRepository(Category);
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {

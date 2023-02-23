@@ -3,7 +3,7 @@ import "express-async-errors";
 
 import swaggerUI from "swagger-ui-express";
 
-import "@shared/database/data-source";
+import { AppDataSource } from "@shared/database/data-source";
 
 import "@shared/container";
 
@@ -11,6 +11,13 @@ import { router } from "@shared/infra/http/routes";
 import { AppError } from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
+
+AppDataSource()
+  .initialize()
+  .then(async () => {
+    console.log("Initializing the database...");
+  })
+  .catch((err) => console.log(err));
 
 const app = express();
 

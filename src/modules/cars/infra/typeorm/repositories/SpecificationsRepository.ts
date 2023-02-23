@@ -12,7 +12,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;
 
   constructor() {
-    this.repository = AppDataSource.getRepository(Specification);
+    this.repository = AppDataSource().getRepository(Specification);
   }
 
   async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
