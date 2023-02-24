@@ -2,6 +2,6 @@ import "reflect-metadata";
 
 import { AppDataSource } from "./data-source";
 
-const appDataSource = AppDataSource("database");
+const appDataSource = AppDataSource("localhost");
 
 export default appDataSource;

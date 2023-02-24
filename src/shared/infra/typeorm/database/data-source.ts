@@ -16,7 +16,7 @@ const AppDataSource = (host = "database"): DataSource => {
     synchronize: false,
     logging: false,
     entities: [Category, Specification, User, Car],
-    migrations: ["./src/shared/database/migrations/*.ts"],
+    migrations: ["./src/shared/infra/typeorm/database/migrations/*.ts"],
     subscribers: [],
   });
 

@@ -20,8 +20,8 @@
   },
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
-    "migration-create": "typeorm-ts-node-esm migration:create ./src/shared/database/migrations/CreateCars",
-    "migration-run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/database/data-source.ts",
+    "migration-create": "typeorm-ts-node-esm migration:create ./src/shared/infra/typeorm/database/migrations/CreateSpecifications",
+    "migration-run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/database/index.ts",
     "seed:admin": "ts-node-dev -r tsconfig-paths/register ./src/shared/infra/typeorm/seed/admin.ts",
     "test": "jest"
   },
