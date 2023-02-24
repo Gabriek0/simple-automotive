@@ -7,7 +7,7 @@ import {
   ICreateCategoryDTO,
 } from "@modules/cars/repositories/ICategoriesRepository";
 
-import { AppDataSource } from "@shared/database/data-source";
+import appDataSource from "@shared/infra/typeorm/database";
 
 // DTO => Data Transfer Object
 
@@ -15,7 +15,7 @@ class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
 
   constructor() {
-    this.repository = AppDataSource().getRepository(Category);
+    this.repository = appDataSource.getRepository(Category);
   }
 
   async create({ name, description }: ICreateCategoryDTO): Promise<void> {

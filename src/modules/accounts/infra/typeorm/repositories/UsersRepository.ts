@@ -1,14 +1,16 @@
 import { Repository } from "typeorm";
-import { AppDataSource } from "@shared/database/data-source";
+import { AppDataSource } from "@shared/infra/typeorm/database/data-source";
 import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
 import { User } from "../entities/User";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
+
+import appDataSource from "@shared/infra/typeorm/database";
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
 
   constructor() {
-    this.repository = AppDataSource().getRepository(User);
+    this.repository = appDataSource.getRepository(User);
   }
 
   async create({

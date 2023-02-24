@@ -1,9 +1,9 @@
+import "reflect-metadata";
+
 import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
 import swaggerUI from "swagger-ui-express";
-
-import { AppDataSource } from "@shared/database/data-source";
 
 import "@shared/container";
 
@@ -12,7 +12,9 @@ import { AppError } from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
 
-AppDataSource()
+import appDataSource from "../typeorm/database";
+
+appDataSource
   .initialize()
   .then(async () => {
     console.log("Initializing the database...");

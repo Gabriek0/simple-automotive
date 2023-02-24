@@ -1,7 +1,7 @@
 import { hash } from "bcrypt";
 import { v4 as uuid } from "uuid";
 
-import { AppDataSource } from "@shared/database/data-source";
+import { AppDataSource } from "@shared/infra/typeorm/database/data-source";
 
 // get a new connection
 const dataSource = AppDataSource("localhost");
