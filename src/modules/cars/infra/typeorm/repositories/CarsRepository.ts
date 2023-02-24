@@ -4,6 +4,7 @@ import { Repository } from "typeorm";
 
 import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
+
 import appDataSource from "@shared/infra/typeorm/database";
 
 class CarsRepository implements ICarsRepository {
@@ -27,6 +28,12 @@ class CarsRepository implements ICarsRepository {
     });
 
     return car;
+  }
+
+  async findAvailable(): Promise<Car[]> {
+    const cars = await this.repository.find();
+
+    return cars;
   }
 }
 
