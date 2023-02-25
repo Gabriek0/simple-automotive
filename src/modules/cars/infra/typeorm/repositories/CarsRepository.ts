@@ -56,6 +56,16 @@ class CarsRepository implements ICarsRepository {
 
     return cars;
   }
+
+  async findById(car_id: string): Promise<Car> {
+    const car = await this.repository.findOne({
+      where: {
+        id: car_id,
+      },
+    });
+
+    return car;
+  }
 }
 
 export { CarsRepository };
