@@ -39,5 +39,7 @@ export class CreateCarImages1677427169281 implements MigrationInterface {
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable("car_images");
+  }
 }
