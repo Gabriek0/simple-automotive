@@ -1,3 +1,5 @@
+import "reflect-metadata";
+
 import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 import { AppError } from "@shared/errors/AppError";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";

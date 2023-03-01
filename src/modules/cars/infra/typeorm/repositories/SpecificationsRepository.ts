@@ -7,13 +7,13 @@ import {
 
 import { In, Repository } from "typeorm";
 
-import appDataSource from "@shared/infra/typeorm/database";
+import { dataSource } from "@shared/infra/typeorm/database/data-source";
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;
 
   constructor() {
-    this.repository = appDataSource.getRepository(Specification);
+    this.repository = dataSource.getRepository(Specification);
   }
 
   async create({
