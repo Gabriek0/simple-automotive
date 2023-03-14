@@ -24,7 +24,7 @@ import { CarsImageRepository } from "@modules/cars/infra/typeorm/repositories/Ca
 
 // Rentals
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
-import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsReponsitory";
+import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
 
 // 1. Pass interface to within Sigleton
 // 2. When we call the record below, the injection will happen
