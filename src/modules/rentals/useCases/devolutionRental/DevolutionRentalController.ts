@@ -14,7 +14,7 @@ class DevolutionRentalController {
       user_id,
     });
 
-    return response.status(200);
+    return response.status(200).send({});
   }
 }
 
