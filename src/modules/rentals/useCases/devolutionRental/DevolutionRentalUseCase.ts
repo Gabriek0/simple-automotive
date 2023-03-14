@@ -1,4 +1,4 @@
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 // Interfaces
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
@@ -11,6 +11,7 @@ interface IRequest {
   user_id: string;
 }
 
+@injectable()
 class DevolutionRentalUseCase {
   constructor(
     @inject("UsersRepository")
@@ -21,9 +22,9 @@ class DevolutionRentalUseCase {
     private dayjsDateProvider: IDateProvider
   ) {}
 
-  async execute({ id, user_id }: IRequest) {
+  async execute({ id }: IRequest) {
     const rental = await this.rentalsRepository.findById(id);
-    const car = await this.carsRepository.findById(id);
+    const car = await this.carsRepository.findById(rental.car_id);
     let minimum_daily = 1;
 
     if (!rental) {
