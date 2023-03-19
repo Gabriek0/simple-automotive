@@ -25,7 +25,7 @@
     "migration-revert": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/shared/infra/typeorm/database/index.ts",
     "migration-run": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/database/index.ts",
     "seed:admin": "ts-node-dev -r tsconfig-paths/register ./src/shared/infra/typeorm/seed/admin.ts",
-    "test": "NODE_ENV=test jest --runInBand"
+    "test": "NODE_ENV=test jest --runInBand --detectOpenHandles"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",

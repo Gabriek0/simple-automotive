@@ -47,7 +47,6 @@ class CreateRentalUseCase {
     );
 
     if (rentalOpenToUser) {
-      console.log(rentalOpenToUser);
       throw new AppError(`There's a rental in progress for user!`);
     }
 
