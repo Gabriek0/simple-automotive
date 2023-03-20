@@ -9,7 +9,7 @@ import { Rental } from "@modules/rentals/infra/typeorm/entities/Rental";
 
 const dataSource = new DataSource({
   type: "postgres",
-  host: "database", // database if docker, localhost if migrations.
+  host: "localhost", // database if docker, localhost if migrations.
   port: 5432,
   username: "docker",
   password: "1234",
@@ -24,4 +24,4 @@ const dataSource = new DataSource({
   subscribers: [],
 });
 
-export { dataSource };
+export default dataSource;

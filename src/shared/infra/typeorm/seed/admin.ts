@@ -1,7 +1,7 @@
 import { hash } from "bcrypt";
 import { v4 as uuid } from "uuid";
 
-import { createConnection } from "../database";
+import createConnection from "../database";
 
 // get a new connection
 const dataSource = createConnection("localhost");

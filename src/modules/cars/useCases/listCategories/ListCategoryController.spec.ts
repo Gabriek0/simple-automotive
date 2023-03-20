@@ -6,7 +6,7 @@ import { app } from "@shared/infra/http/app";
 import request from "supertest";
 
 import { DataSource } from "typeorm";
-import { createConnection } from "@shared/infra/typeorm/database";
+import createConnection from "@shared/infra/typeorm/database";
 
 let connection: DataSource;
 

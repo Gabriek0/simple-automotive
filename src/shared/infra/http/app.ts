@@ -12,9 +12,9 @@ import { AppError } from "@shared/errors/AppError";
 
 import swaggerFile from "../../../swagger.json";
 
-import { createConnection } from "../typeorm/database";
+import createConnection from "../typeorm/database";
 
-createConnection("database")
+createConnection("localhost")
   .then(async () => {
     console.log("Initializing the database...");
   })

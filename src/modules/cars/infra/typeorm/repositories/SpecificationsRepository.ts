@@ -7,7 +7,7 @@ import {
 
 import { In, Repository } from "typeorm";
 
-import { dataSource } from "@shared/infra/typeorm/database/data-source";
+import dataSource from "@shared/infra/typeorm/database/data-source";
 
 class SpecificationsRepository implements ISpecificationsRepository {
   private repository: Repository<Specification>;

@@ -6,7 +6,7 @@ import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "@modules/cars/repositories/ICategoriesRepository";
-import { dataSource } from "@shared/infra/typeorm/database/data-source";
+import dataSource from "@shared/infra/typeorm/database/data-source";
 
 // DTO => Data Transfer Object
 

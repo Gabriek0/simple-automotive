@@ -6,7 +6,7 @@ import { ICreateCarDTO } from "@modules/cars/dtos/ICreateCarDTO";
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 
 import { IFindAvailableCarDTO } from "@modules/cars/dtos/IFindAvailableCarDTO";
-import { dataSource } from "@shared/infra/typeorm/database/data-source";
+import dataSource from "@shared/infra/typeorm/database/data-source";
 
 class CarsRepository implements ICarsRepository {
   private repository: Repository<Car>;
