@@ -11,7 +11,7 @@ import { User } from "./User";
 
 import { v4 as uuid } from "uuid";
 
-@Entity("users_tokens")
+@Entity("users_token")
 class UserTokens {
   @PrimaryColumn()
   id: string;
@@ -33,7 +33,7 @@ class UserTokens {
   created_at: Date;
 
   constructor() {
-    if (this.id) {
+    if (!this.id) {
       this.id = uuid();
     }
   }

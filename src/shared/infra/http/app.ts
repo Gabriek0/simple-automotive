@@ -14,7 +14,7 @@ import swaggerFile from "../../../swagger.json";
 
 import createConnection from "../typeorm/database";
 
-createConnection("localhost")
+createConnection("database")
   .then(async () => {
     console.log("Initializing the database...");
   })

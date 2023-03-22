@@ -25,6 +25,7 @@ import { CarsImageRepository } from "@modules/cars/infra/typeorm/repositories/Ca
 // Rentals
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
+import { UsersTokenRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokenRepository";
 
 // 1. Pass interface to within Sigleton
 // 2. When we call the record below, the injection will happen
@@ -54,4 +55,9 @@ container.registerSingleton<ICarsImageRepository>(
 container.registerSingleton<IRentalsRepository>(
   "RentalsRepository",
   RentalsRepository
+);
+
+container.registerSingleton<UsersTokenRepository>(
+  "UsersTokenRepository",
+  UsersTokenRepository
 );
