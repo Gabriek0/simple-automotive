@@ -49,14 +49,14 @@ class RefreshTokenUseCase {
       expiresIn: expires_in_refresh_token,
     });
 
-    const refresh_token_expires_date = this.dayjsDateProvider.addDays(
+    const expires_date = this.dayjsDateProvider.addDays(
       expires_refresh_token_days
     );
 
     await this.usersTokenRepository.create({
       user_id,
       refresh_token,
-      expires_date: refresh_token_expires_date,
+      expires_date,
     });
 
     return refresh_token;
