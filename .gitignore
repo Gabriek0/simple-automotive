@@ -1,6 +1,10 @@
 # Dependencies
 **/node_modules
 
+#Jest
+coverage
+
+
 # Environment Variables
 .env
 
