@@ -4,8 +4,6 @@ import { AppError } from "@shared/errors/AppError";
 
 import { NextFunction, Request, Response } from "express";
 
-import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
-import { UsersTokenRepository } from "@modules/accounts/infra/typeorm/repositories/UsersTokenRepository";
 import auth from "@config/auth";
 
 interface IPayload {
@@ -19,9 +17,8 @@ export async function ensureAuthenticated(
 ) {
   // Bearer authentication
   const authHeader = request.headers.authorization;
-  const userTokenRepository = new UsersTokenRepository();
 
-  const { secret_refresh_token } = auth;
+  const { secret_token } = auth;
 
   if (!authHeader) {
     throw new AppError("Token missing", 401);
@@ -30,13 +27,7 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub: user_id } = verify(token, secret_refresh_token) as IPayload;
-
-    const user = await userTokenRepository.findByUserIdAndToken(user_id, token);
-
-    if (!user) {
-      throw new AppError("User does not exists!", 401);
-    }
+    const { sub: user_id } = verify(token, secret_token) as IPayload;
 
     request.user = {
       id: user_id,
