@@ -9,6 +9,11 @@ import { IStorageProvider } from "./StorageProvider/IStorageProvider";
 import { LocalStorageProvider } from "./StorageProvider/implementations/LocalStorageProvider";
 import { S3StorageProvider } from "./StorageProvider/implementations/S3StorageProvider";
 
+const diskStorage = {
+  local: LocalStorageProvider,
+  s3: S3StorageProvider,
+};
+
 container.registerSingleton<IDateProvider>(
   "DayjsDateProvider",
   DayjsDateProvider
@@ -21,5 +26,5 @@ container.registerInstance<IMailProvider>(
 
 container.registerSingleton<IStorageProvider>(
   "StorageProvider",
-  S3StorageProvider
+  diskStorage[process.env.disk]
 );
