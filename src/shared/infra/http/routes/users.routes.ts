@@ -6,7 +6,7 @@ import { UpdateUserAvatarController } from "@modules/accounts/useCases/updateUse
 import { ensureAuthenticated } from "@shared/infra/http/middlewares/ensureAuthenticated";
 
 import uploadConfig from "@config/upload";
-import { ProfileUserController } from "@modules/cars/useCases/profileUserUseCase/ProfileUserController";
+import { ProfileUserController } from "@modules/accounts/useCases/profileUserUseCase/ProfileUserController";
 
 const usersRoutes = Router();
 
