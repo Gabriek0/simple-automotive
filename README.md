@@ -36,11 +36,11 @@ This project was developed with the following technologies:
 [typeorm]: https://typeorm.io/
 [jest]: https://jestjs.io/
 [supertest]: https://www.npmjs.com/package/supertest
-[handlebars]: 'https://handlebarsjs.com/'
-[swagger]: 'https://swagger.io/solutions/api-documentation/'
-[nodemalier]: 'https://www.npmjs.com/package/nodemailer'
-[tsyringe]: 'https://www.npmjs.com/package/tsyringe'
-[multer]: 'https://www.npmjs.com/package/multer'
+[handlebars]: https://handlebarsjs.com/
+[swagger]: https://swagger.io/solutions/api-documentation/
+[nodemalier]: https://www.npmjs.com/package/nodemailer
+[tsyringe]: https://www.npmjs.com/package/tsyringe
+[multer]: https://www.npmjs.com/package/multer
 
 ### 🤔 How to run the project?
 
