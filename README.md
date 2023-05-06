@@ -7,8 +7,7 @@
 <div align="center">
   <a href="#nut_and_bolt-Technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-How-to-run-the-project?">How to run </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-Author">Author</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#casos-de-uso">Casos de Uso</a>
+  <a href="#-Author">Author</a>
 </div>
 
 ### :computer: Project
@@ -46,6 +45,7 @@ This project was developed with the following technologies:
 ### 🤔 How to run the project?
 
 ```bash
+
 # Clone the repository
 git clone https://github.com/Gabriek0/simple-automotive.git
 
